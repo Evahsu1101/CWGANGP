@@ -83,7 +83,7 @@ class CustomDataset(Dataset):
 
 # 圖像預處理256*256
 transform = transforms.Compose([
-    transforms.Resize((512, 512)),  
+    transforms.Resize((384, 384)),  
     transforms.ToTensor(), 
 ])
 
@@ -98,7 +98,7 @@ model_save_dir = r"./model"
 custom_dataset = CustomDataset(root_folder, transform=transform)
 
 # dataloader
-batch_size = 6
+batch_size = 43
 data_loader = DataLoader(custom_dataset, batch_size=batch_size, shuffle=True)
 
 
@@ -176,7 +176,7 @@ latent_size = 200
 latent_dim = 200
 condition_dim = 1
 img_channels = 3
-img_size = 512
+img_size = 384
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # 創建及初始化生成器及判別器
@@ -245,7 +245,7 @@ epochs = 5000
 lambda_gp = 10  
 n_critic = 2
 sample_interval = 10
-img_size = 256
+img_size = 384
 batch_size = 43
 num_classes = 2
 epochs = 10000
@@ -362,7 +362,7 @@ output_dir = r"./generation4"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # 加载生成器模型
-generator = Generator(latent_dim, condition_dim=1, img_channels=3, img_size=512).to(device)
+generator = Generator(latent_dim, condition_dim=1, img_channels=3, img_size=384).to(device)
 generator.load_state_dict(torch.load('CWGAN-GP generatorEPOCH3000.pth', map_location=device))
 
 # 生成类别0的图片
