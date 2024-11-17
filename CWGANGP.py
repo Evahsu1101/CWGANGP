@@ -93,7 +93,7 @@ transform = transforms.Compose([
 # output_folder = r'C:\Users\User\Desktop\Label Vector datasets\C\CWGAN-GP\測試生成'
 # model_save_dir = r'C:\Users\User\Desktop\Label Vector datasets\C\CWGAN-GP\model'
 root_folder = r"./classification"
-output_folder = r"./reneration_test"
+output_folder = r"./generation_test"
 model_save_dir = r"./model"
 custom_dataset = CustomDataset(root_folder, transform=transform)
 
